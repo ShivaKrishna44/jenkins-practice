@@ -4,6 +4,12 @@ pipeline {
         PROJECT = 'expense'
         COMPONENT = 'backend'
     }
+     options {
+        //Disallow concurrent executions of the Pipeline.
+        disableConcurrentBuilds()
+        // Timeout counter starts AFTER agent is allocated
+        timeout(time: 1, unit: 'SECONDS')
+    }
 
     stages {
         stage('Build') {
@@ -12,6 +18,7 @@ pipeline {
                 sh """
                 echo "Hello this is build"
                 echo "Project: $PROJECT"
+                sleep 15
                 """
                }
             }
