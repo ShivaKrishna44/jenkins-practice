@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
               script{
-                sh """"
+                sh """
                 echo "Hello this is build"
                 echo "Project: $PROJECT"
                 """
@@ -20,7 +20,7 @@ pipeline {
         stage('Test') {
             steps {
               script{
-                sh """"
+                sh """
                 echo "Hello this is test"
                 """
               }
