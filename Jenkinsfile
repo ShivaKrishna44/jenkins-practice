@@ -5,7 +5,7 @@ pipeline {
         COMPONENT = 'BACKEND' 
         DEPLOY_TO = "production"
     }
-    
+
     options {
         disableConcurrentBuilds()
         timeout(time: 30, unit: 'MINUTES')
@@ -47,14 +47,14 @@ pipeline {
             }
         }
         stage('Deploy') {
-            /* input {
+             input {
                 message "Should we continue?"
                 ok "Yes, we should."
                 submitter "alice,bob"
                 parameters {
                     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
                 }
-            } */
+            } 
             when { 
                 environment name: 'DEPLOY_TO', value: 'production'
             }
