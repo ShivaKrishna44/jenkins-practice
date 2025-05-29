@@ -31,7 +31,7 @@ pipeline {
         stage('Deploy') {
             steps {
              script{
-              sh """"
+              sh """
                 echo "Hello this is deploy"
                 """
             }
