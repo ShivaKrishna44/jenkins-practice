@@ -12,7 +12,7 @@ pipeline {
                 sh """"
                 echo "Hello this is build"
                 echo "Project: $PROJECT"
-                """"
+                """
                }
             }
         }  
@@ -22,7 +22,7 @@ pipeline {
               script{
                 sh """"
                 echo "Hello this is test"
-                """"
+                """
               }
             } 
         }
@@ -33,7 +33,7 @@ pipeline {
              script{
               sh """"
                 echo "Hello this is deploy"
-                """"
+                """
             }
           }
         }
