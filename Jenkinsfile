@@ -1,24 +1,46 @@
 pipeline {
     agent { label 'AGENT1' }
+    environment { 
+        PROJECT = 'expense'
+        COMPONENT = 'backend'
+    }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Hello this is build'
+              script{
+                sh """"
+                echo "Hello this is build"
+                echo "Project: $PROJECT"
+                """"
+               }
             }
         }  
+        
         stage('Test') {
             steps {
-                echo 'Hello this is test'
-            }
+              script{
+                sh """"
+                echo "Hello this is test"
+                echo "Project: $PROJECT"
+                """"
+              }
+            } 
         }
     
 
         stage('Deploy') {
             steps {
-                echo 'Hello this is deploy'
+             script{
+              sh """"
+                echo "Hello this is deploy"
+                echo "Project: $PROJECT"
+                """"
             }
+          }
         }
+    
+     }
     }
 
     post { 
@@ -32,4 +54,3 @@ pipeline {
             echo 'I will run when pipeline is success!'
         }
     }
-}
